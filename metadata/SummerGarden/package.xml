@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SummerGarden</fullName>
+    <types>
+        <members>Gardening</members>
+        <name>CustomApplication</name>
+    </types>
+    <types>
+        <members>Plant__c.Age__c</members>
+        <members>Plant__c.Date_cultivated__c</members>
+        <members>Plant__c.Date_planted__c</members>
+        <members>Plant__c.Last_watered__c</members>
+        <members>Plant__c.PH_of_Soil__c</members>
+        <members>Plant__c.Season__c</members>
+        <members>Plant__c.Variety__c</members>
+        <members>Tools__c.Status_of_tool__c</members>
+        <members>Variety__c.Regular_watering__c</members>
+        <members>Variety__c.Season__c</members>
+        <members>Variety__c.Type__c</members>
+        <members>Variety__c.fertiliser__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>Plant__c</members>
+        <members>Tools__c</members>
+        <members>Variety__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>Plant__c</members>
+        <members>Tools__c</members>
+        <members>Variety__c</members>
+        <name>CustomTab</name>
+    </types>
+    <types>
+        <members>Plant__c-Plant Layout</members>
+        <members>Plant__c-Plant Layout Gardener</members>
+        <members>Tools__c-Tool Layout</members>
+        <members>Variety__c-Variety Layout</members>
+        <name>Layout</name>
+    </types>
+    <types>
+        <members>Plant__c.All</members>
+        <members>Tools__c.All</members>
+        <members>Variety__c.All</members>
+        <name>ListView</name>
+    </types>
+    <types>
+        <members>Plant__c.PH_balance_within_range_0_and_14</members>
+        <name>ValidationRule</name>
+    </types>
+    <version>30.0</version>
+</Package>

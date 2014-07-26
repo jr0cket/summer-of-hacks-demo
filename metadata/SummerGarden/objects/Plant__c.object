@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Represent plants using auto numbering (because Peter wanted to)</description>
+    <enableActivities>true</enableActivities>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Age__c</fullName>
+        <description>The age of the plant based on when it was planted</description>
+        <externalId>false</externalId>
+        <formula>TODAY() - Date_planted__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The age of the plant based on when it was planted</inlineHelpText>
+        <label>Age</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Date_cultivated__c</fullName>
+        <externalId>false</externalId>
+        <label>Date cultivated</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_planted__c</fullName>
+        <defaultValue>TODAY()</defaultValue>
+        <description>The day the seeds for the plant were sown</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The day the seeds for the plant were sown</inlineHelpText>
+        <label>Date planted</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Last_watered__c</fullName>
+        <description>The date the plant was last watered at a particular plot</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date the plant was last watered at a particular plot</inlineHelpText>
+        <label>Last watered</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>PH_of_Soil__c</fullName>
+        <description>The ph balance of the soil when planted</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The ph balance of the soil when planted</inlineHelpText>
+        <label>PH of Soil</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Season__c</fullName>
+        <description>Get the season of a Plant from variety</description>
+        <externalId>false</externalId>
+        <formula>TEXT(Variety__r.Season__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Show the season a variety of plant should be sown</inlineHelpText>
+        <label>Variety Season</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Variety__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>A loose relationship between plant and variety, plants don&apos;t necessarily need to know the variety, its simply extra information</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Plants have a variety to help understand what kind of thing a particular plant is</inlineHelpText>
+        <label>Variety</label>
+        <referenceTo>Variety__c</referenceTo>
+        <relationshipLabel>Plants</relationshipLabel>
+        <relationshipName>Plants</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Plant</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>Variety__c</columns>
+        <columns>Season__c</columns>
+        <columns>Age__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>PLNT{0000}</displayFormat>
+        <label>Plant ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Plants</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Variety__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Age__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Date_planted__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Last_watered__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Date_cultivated__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Season__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>PH_of_Soil__c</customTabListAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Read</sharingModel>
+    <validationRules>
+        <fullName>PH_balance_within_range_0_and_14</fullName>
+        <active>true</active>
+        <description>Ensure that a PH balance value is between 0 and 14</description>
+        <errorConditionFormula>PH_of_Soil__c &lt; 0  ||  PH_of_Soil__c &gt; 14</errorConditionFormula>
+        <errorDisplayField>PH_of_Soil__c</errorDisplayField>
+        <errorMessage>The PH Balance value must be between 0 and 14</errorMessage>
+    </validationRules>
+</CustomObject>
